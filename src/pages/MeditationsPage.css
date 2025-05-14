@@ -1,0 +1,146 @@
+.meditations-page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.meditations-header {
+  padding: var(--space-16) 0 var(--space-8);
+  text-align: center;
+}
+
+.meditations-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  color: var(--color-neutral-900);
+}
+
+.meditations-header p {
+  font-size: 1.2rem;
+  color: var(--color-neutral-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.meditation-selector {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.selector-group {
+  margin-bottom: var(--space-6);
+}
+
+.selector-group label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: 500;
+  color: var(--color-neutral-700);
+}
+
+.selector-group select {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  color: var(--color-neutral-800);
+  background-color: white;
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.selector-group select:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 2px var(--color-primary-200);
+}
+
+.selector-group select:disabled {
+  background-color: var(--color-neutral-100);
+  cursor: not-allowed;
+}
+
+.meditation-preview {
+  text-align: center;
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-neutral-200);
+  margin-top: var(--space-6);
+}
+
+.meditation-preview h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-4);
+  color: var(--color-neutral-900);
+}
+
+.meditation-preview p {
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-4);
+}
+
+.meditation-type {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+}
+
+.meditation-player {
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-neutral-200);
+  margin-top: var(--space-6);
+}
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.player-header h2 {
+  font-size: 1.5rem;
+  color: var(--color-neutral-900);
+  margin: 0;
+}
+
+.audio-player,
+.video-player {
+  width: 100%;
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.video-player {
+  aspect-ratio: 16 / 9;
+  background-color: black;
+}
+
+.player-description {
+  color: var(--color-neutral-600);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .meditations-header h1 {
+    font-size: 2rem;
+  }
+  
+  .meditations-header p {
+    font-size: 1rem;
+  }
+  
+  .player-header {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+}

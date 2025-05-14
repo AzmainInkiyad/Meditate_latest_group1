@@ -1,0 +1,454 @@
+:root {
+  /* Color system */
+  --color-primary-50: #eef5ff;
+  --color-primary-100: #d9e9ff;
+  --color-primary-200: #bcd8ff;
+  --color-primary-300: #93bfff;
+  --color-primary-400: #7BB5FF;
+  --color-primary-500: #4685f7;
+  --color-primary-600: #3062e3;
+  --color-primary-700: #2851d8;
+  --color-primary-800: #2445b8;
+  --color-primary-900: #233b8f;
+  
+  --color-secondary-50: #eefcf6;
+  --color-secondary-100: #d6f7e8;
+  --color-secondary-200: #b0efd6;
+  --color-secondary-300: #78D6AD;
+  --color-secondary-400: #52c996;
+  --color-secondary-500: #39ad7e;
+  --color-secondary-600: #2a8962;
+  --color-secondary-700: #256e50;
+  --color-secondary-800: #225843;
+  --color-secondary-900: #1d4938;
+  
+  --color-accent-50: #f5f3ff;
+  --color-accent-100: #ede8ff;
+  --color-accent-200: #ddd5ff;
+  --color-accent-300: #c4b8ff;
+  --color-accent-400: #A39CDD;
+  --color-accent-500: #8c78e0;
+  --color-accent-600: #7a5ad8;
+  --color-accent-700: #6a42c2;
+  --color-accent-800: #5935a0;
+  --color-accent-900: #4b2f81;
+  
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  
+  --color-success-500: #22c55e;
+  --color-warning-500: #f59e0b;
+  --color-error-500: #ef4444;
+  
+  /* Spacing system (based on 8px) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem;  /* 24px */
+  --space-8: 2rem;    /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem;   /* 48px */
+  --space-16: 4rem;   /* 64px */
+  --space-20: 5rem;   /* 80px */
+  --space-24: 6rem;   /* 96px */
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Shadow system */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-all: all 0.3s ease;
+  --transition-colors: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  --transition-opacity: opacity 0.3s ease;
+  --transition-transform: transform 0.3s ease;
+}
+
+/* Base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-neutral-800);
+  background-color: var(--color-neutral-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+  color: var(--color-neutral-900);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+a:hover {
+  color: var(--color-primary-700);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Responsive breakpoints as utility classes */
+@media (min-width: 640px) {
+  .sm\:container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:container {
+    max-width: 1280px;
+  }
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: var(--transition-all);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-500);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background-color: var(--color-accent-500);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid currentColor;
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: 1.125rem;
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+/* Spacing utilities */
+.p-4 {
+  padding: var(--space-4);
+}
+
+.p-6 {
+  padding: var(--space-6);
+}
+
+.p-8 {
+  padding: var(--space-8);
+}
+
+.py-12 {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.py-16 {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.py-24 {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-8 {
+  margin-top: var(--space-8);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.mb-12 {
+  margin-bottom: var(--space-12);
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Card utilities */
+.card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-all);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Section utilities */
+.section {
+  padding: var(--space-16) 0;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

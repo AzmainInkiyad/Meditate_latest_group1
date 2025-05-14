@@ -1,0 +1,89 @@
+.login-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--color-primary-50), var(--color-accent-50));
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-neutral-900);
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-6);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--color-neutral-700);
+}
+
+.form-group input {
+  padding: var(--space-3);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  transition: var(--transition-colors);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 2px var(--color-primary-100);
+}
+
+.error-message {
+  padding: var(--space-3);
+  margin-bottom: var(--space-4);
+  background-color: var(--color-error-500);
+  color: white;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.form-footer {
+  margin-top: var(--space-6);
+  text-align: center;
+  color: var(--color-neutral-600);
+}
+
+.form-footer a {
+  color: var(--color-primary-600);
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.btn-lg {
+  margin-top: var(--space-2);
+}
